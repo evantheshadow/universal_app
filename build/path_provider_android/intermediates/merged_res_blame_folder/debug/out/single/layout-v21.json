@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/ShadowCat/AndroidStudioProjects/new_calc/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/ShadowCat/.gradle/caches/transforms-2/files-2.1/be6c37f920226f799c8e079c11ae9b32/core-1.6.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/ShadowCat/AndroidStudioProjects/new_calc/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/ShadowCat/.gradle/caches/transforms-2/files-2.1/be6c37f920226f799c8e079c11ae9b32/core-1.6.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/ShadowCat/AndroidStudioProjects/new_calc/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/ShadowCat/.gradle/caches/transforms-2/files-2.1/be6c37f920226f799c8e079c11ae9b32/core-1.6.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/ShadowCat/AndroidStudioProjects/new_calc/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/ShadowCat/.gradle/caches/transforms-2/files-2.1/be6c37f920226f799c8e079c11ae9b32/core-1.6.0/res/layout-v21/notification_action_tombstone.xml"
+    }
+]

@@ -1,0 +1,4 @@
+#Tue Apr 19 15:04:53 YEKT 2022
+base.0=/Users/ShadowCat/AndroidStudioProjects/new_calc/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
