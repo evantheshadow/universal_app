@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:new_calc/screens/1_calc/calc_screen.dart';
 import 'package:new_calc/screens/3_todolist/todo_screen.dart';
 import 'package:new_calc/screens/4_calendar/calendar_screen.dart';
 import 'package:new_calc/screens/5_networking/networking_screen.dart';
+
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -20,15 +23,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomeScreen());
+    return MaterialApp(home: HomeScreen());
   }
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+
+  List<String> _todoItems = [];
 
   @override
   Widget build(BuildContext context) {
+    _getPrefs();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Приложение'),
@@ -54,8 +60,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ToDoListScreen()),
-                  );
+                        builder: (context) => ToDoListScreen(todoItems: _todoItems,),));
                 },
               ),
               ElevatedButton(
@@ -81,16 +86,12 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+  void _getPrefs() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (prefs.getStringList('TodoList') != null) {
+      _todoItems = prefs.getStringList('TodoList')!;
+    }
+  }
 }
 
-// body: Center(
-// child: ElevatedButton(
-// child: const Text('Open route'),
-// onPressed: () {
-// Navigator.push(
-// context,
-// MaterialPageRoute(builder: (context) => const SecondRoute()),
-// );
-// },
-// ),
-// ),

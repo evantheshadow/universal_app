@@ -5,7 +5,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 
 class ToDoListScreen extends StatefulWidget {
-  const ToDoListScreen({Key? key}) : super(key: key);
+  List<String> todoItems;
+
+  ToDoListScreen({Key? key, required this.todoItems}) : super(
+      key: key
+  );
 
   @override
   createState() => ToDoListScreenState();
@@ -17,11 +21,11 @@ class ToDoListScreenState extends State<ToDoListScreen> {
   // if (prefs.getStringList('TodoList') != null) {
   //   _todoItems = prefs.getStringList('TodoList')!;
   // }
-  List<String> _todoItems = [];
+  // List<String> todoItems = [];
 
   @override
   Widget build(BuildContext context) {
-    // _getPrefs();
+    _getPrefs();
     return Scaffold(
       appBar: AppBar(title: const Text('Todo List')),
       body: _buildTodoList(),
@@ -35,9 +39,9 @@ class ToDoListScreenState extends State<ToDoListScreen> {
   Widget _buildTodoList() {
     return ListView.builder(
         itemBuilder: (context, index) {
-          print("To Do Items Length: ${_todoItems.length}");
-          if (index < _todoItems.length) {
-            return _buildTodoItem(_todoItems[index], index);
+          print("To Do Items Length: ${widget.todoItems.length}");
+          if (index < widget.todoItems.length) {
+            return _buildTodoItem(widget.todoItems[index], index);
           } else {
             return const Text('');
           }
@@ -82,7 +86,7 @@ class ToDoListScreenState extends State<ToDoListScreen> {
 
   void _addItem(String task) {
     if (task.isNotEmpty) {
-      setState(() => _todoItems.add(task));
+      setState(() => widget.todoItems.add(task));
       _setPrefs();
     }
   }
@@ -92,7 +96,7 @@ class ToDoListScreenState extends State<ToDoListScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-              title: Text('Задача "${_todoItems[index]}" выполнена?'),
+              title: Text('Задача "${widget.todoItems[index]}" выполнена?'),
               actions: <Widget>[
                 FlatButton(
                     child: const Text('Отмена'),
@@ -108,19 +112,19 @@ class ToDoListScreenState extends State<ToDoListScreen> {
   }
 
   void _removeItem(int index) {
-    setState(() => _todoItems.removeAt(index));
+    setState(() => widget.todoItems.removeAt(index));
     _setPrefs();
   }
 
   void _setPrefs() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setStringList('TodoList', _todoItems);
+    prefs.setStringList('TodoList', widget.todoItems);
   }
 
   void _getPrefs() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (prefs.getStringList('TodoList') != null) {
-      _todoItems = prefs.getStringList('TodoList')!;
+      widget.todoItems = prefs.getStringList('TodoList')!;
     }
   }
 }
