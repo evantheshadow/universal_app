@@ -1,16 +1,13 @@
-# new_calc
+# Универсальное приложение.
+### Сделано при помощи Dart и Flutter.
 
-calculator.
+### Данное приложение содержит в себе 4 подприложения:
+- Калькулятор. Простой калькулятор, который позволяет рассчитать Вам простые выражения.
+- Список ToDo. Ваш друг по жизни, который является простым органайзером. В нем Вы сможете удалять и добавлять свои дела, которые хотите сделать сегодня.
+- Календарь. Не теряйте голову! В этом приложении Вы сможете добавлять события, а также отслеживать их.
+- Мобильный "Urban Dictionary". Является мобильным аналогом Urban Dictionary - сайт, который является народным словарем. В нем Вы пока можете находить значение слова, которое Вы захотите.
 
-## Getting Started
+### Для того, чтобы попробовать протестировать приложение, необходимо установить Android Studio или написать на почту **mayrocken@gmail.com**, чтобы он прислал Вам рабочую заготовку приложения.
+### Также на почту можете писать Ваши пожелания и найденные ошибки.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## (с) 2022 Shadow Cat
